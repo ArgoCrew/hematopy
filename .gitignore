@@ -59,6 +59,9 @@ target/
 # DotEnv configuration
 .env
 
+# Pyenv
+.python-version
+
 # Database
 *.db
 *.rdb
