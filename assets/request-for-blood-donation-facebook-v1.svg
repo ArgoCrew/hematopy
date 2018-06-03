@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1600"
@@ -20,7 +21,19 @@
    inkscape:export-xdpi="57.599998"
    inkscape:export-ydpi="57.599998">
   <defs
-     id="defs4" />
+     id="defs4">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4439">
+      <rect
+         y="1330.8931"
+         x="40.568523"
+         height="448.65488"
+         width="448.65488"
+         id="rect4441"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </clipPath>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -29,8 +42,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35355339"
-     inkscape:cx="1167.7311"
-     inkscape:cy="91.12769"
+     inkscape:cx="447.8964"
+     inkscape:cy="-248.28357"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -48,7 +61,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -79,12 +92,12 @@
        id="text3370"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3382"
+         id="name_l1"
          x="568.63336"
          y="624.01483"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff">JOSÉ MARIA PEREIRA </tspan><tspan
          sodipodi:role="line"
-         id="tspan3384"
+         id="name_l2"
          x="568.63336"
          y="686.51483"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff">SOUZA ARUDINO DO SANTOS </tspan></text>
@@ -96,7 +109,7 @@
        id="text3386"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3388"
+         id="blood_type"
          x="560.64587"
          y="844.32812"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:175px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff">AB+</tspan></text>
@@ -110,7 +123,7 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff"
          y="911.25616"
          x="568.63336"
-         id="tspan3394"
+         id="place_name"
          sodipodi:role="line">HEMOES</tspan></text>
     <text
        xml:space="preserve"
@@ -120,7 +133,7 @@
        id="text3398"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3400"
+         id="address_l1"
          x="568.63336"
          y="958.01477"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff">Av. Mal. Campos, 1468</tspan><tspan
@@ -128,7 +141,7 @@
          x="568.63336"
          y="1001.7648"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff"
-         id="tspan3402">Nazareth, Vitória - ES, 29047-100</tspan></text>
+         id="address_l2">Nazareth, Vitória - ES, 29047-100</tspan></text>
     <rect
        y="424.36218"
        x="-6.1035156e-05"
@@ -148,5 +161,16 @@
          x="460.0097"
          id="tspan3410"
          sodipodi:role="line">PEDIDO DE DOAÇÃO</tspan></text>
+    <image
+       y="1330.8931"
+       x="40.568462"
+       id="image"
+       xlink:href="data:image/png;base64,0"
+       style="image-rendering:optimizeQuality"
+       preserveAspectRatio="none"
+       height="448.655"
+       width="448.655"
+       clip-path="url(#clipPath4439)"
+       transform="translate(0,-769.59479)" />
   </g>
 </svg>
