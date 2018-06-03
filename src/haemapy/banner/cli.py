@@ -2,11 +2,18 @@ import click
 
 from .model import BannerBloodDonation
 
+
 @click.group()
-def cli():
+def cli_root():
     pass
 
-@cli.command()
+    
+@cli_root.group('create')
+def cli_root_create():
+    pass
+
+
+@cli_root_create.command('banner')
 @click.option('-ri', '--recipient-image', 
               prompt='Image of the person who need blood donation',
               type=click.File('rb'), help='Image of the person who need blood donation',
@@ -50,14 +57,11 @@ def cli():
 @click.option('-o', '--output', 
               help='Path and file name to output',
               default='./banner-blood-donation-{:%Y-%m-%dT%H-%M-%S}.png')
-def create(recipient_image, recipient_name, recipient_blood_type, 
-           location_name, location_address_street, location_address_number, 
-           location_address_district, location_address_locality,
-           location_address_region, location_address_postal_code,
-           output):
+def cli_root_create_banner(
+    recipient_image, recipient_name, recipient_blood_type, 
+    location_name, location_address_street, location_address_number, 
+    location_address_district, location_address_locality,
+    location_address_region, location_address_postal_code,
+    output):
   banner = BannerBloodDonation(donate_action=locals())
   banner.save(output)
-  
-
-if __name__ == '__main__':
-    cli()
