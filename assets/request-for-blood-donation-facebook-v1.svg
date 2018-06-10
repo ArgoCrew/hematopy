@@ -92,12 +92,12 @@
        id="text3370"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="name_l1"
+         id="recipient_name_part_1"
          x="568.63336"
          y="624.01483"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff">JOSÉ MARIA PEREIRA </tspan><tspan
          sodipodi:role="line"
-         id="name_l2"
+         id="recipient_name_part_2"
          x="568.63336"
          y="686.51483"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff">SOUZA ARUDINO DO SANTOS </tspan></text>
@@ -109,7 +109,7 @@
        id="text3386"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="blood_type"
+         id="recipient_blood_type"
          x="560.64587"
          y="844.32812"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:175px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff">AB+</tspan></text>
@@ -123,7 +123,7 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff"
          y="911.25616"
          x="568.63336"
-         id="place_name"
+         id="location_name"
          sodipodi:role="line">HEMOES</tspan></text>
     <text
        xml:space="preserve"
@@ -133,7 +133,7 @@
        id="text3398"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="address_l1"
+         id="location_address_part_1"
          x="568.63336"
          y="958.01477"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff">Av. Mal. Campos, 1468</tspan><tspan
@@ -141,7 +141,7 @@
          x="568.63336"
          y="1001.7648"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;text-anchor:start;fill:#ffffff"
-         id="address_l2">Nazareth, Vitória - ES, 29047-100</tspan></text>
+         id="location_address_part_2">Nazareth, Vitória - ES, 29047-100</tspan></text>
     <rect
        y="424.36218"
        x="-6.1035156e-05"
@@ -164,7 +164,7 @@
     <image
        y="1330.8931"
        x="40.568462"
-       id="image"
+       id="recipient_image"
        xlink:href="data:image/png;base64,0"
        style="image-rendering:optimizeQuality"
        preserveAspectRatio="none"
