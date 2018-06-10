@@ -17,7 +17,7 @@ def cli_root_create():
 @click.option('-ri', '--recipient-image', 
               prompt='Image of the person who need blood donation',
               type=click.File('rb'), help='Image of the person who need blood donation',
-              default='/home/gustavorps/desktop/gustavorps-photo-2018-05.jpg')
+              default='./assets/recipient-photo.jpg')
 @click.option('-rn', '--recipient-name',
               prompt='Name of Patient',
               help='The name of person who needs donation',
@@ -33,7 +33,7 @@ def cli_root_create():
 @click.option('-las', '--location-address-street', 
               prompt='Street address of place where the blood donation can be made',
               help='Street address of place where the blood donation can be made',
-              default='Av. Mal. Campos, 1468')
+              default='Av. Mal. Campos')
 @click.option('-lan', '--location-address-number', 
               prompt='Post Office Box Number of place where the blood donation can be made',
               help='Post Office Box Number of place where the blood donation can be made',
