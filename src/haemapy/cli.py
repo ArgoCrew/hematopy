@@ -1,15 +1,8 @@
 import click
 
-@click.group()
-def cli():
-    pass
+from .banner.cli import cli_root as banner_cli
 
-@cli.command()
-@click.option('--name', prompt='Name of Patient',
-              help='The name of person who needs donation')
-def banner(name):
-    """Simple program that greets NAME for a total of COUNT times."""
-    click.echo('Hello %s!' % name)
+haemapy_cli = click.CommandCollection(sources=[banner_cli])
 
 if __name__ == '__main__':
-    cli()
+    haemapy_cli()
