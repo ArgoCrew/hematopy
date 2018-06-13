@@ -16,8 +16,7 @@ def cli_root_create():
 @cli_root_create.command('banner')
 @click.option('-ri', '--recipient-image', 
               prompt='Image of the person who need blood donation',
-              type=click.File('rb'), help='Image of the person who need blood donation',
-              default='./assets/recipient-photo.jpg')
+              type=click.File('rb'), help='Image of the person who need blood donation',)
 @click.option('-rn', '--recipient-name',
               prompt='Name of Patient',
               help='The name of person who needs donation',

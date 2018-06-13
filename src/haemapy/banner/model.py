@@ -20,7 +20,7 @@ NSMAP = {
 
 class BannerBloodDonation(object):
 
-  templates_directory = os.path.join(FILE_PATH, '../../../assets')
+  templates_directory = os.path.join(FILE_PATH, './template')
   el_selectors = {
     'recipient_image': '//svg:image[@id="recipient_image"]',
     'recipient_name_part_1': '//svg:tspan[@id="recipient_name_part_1"]',
