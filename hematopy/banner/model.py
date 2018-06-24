@@ -1,7 +1,6 @@
 import os.path
 import base64
 import mimetypes
-import datetime
 
 import lxml.etree as etree
 import cairosvg
@@ -43,21 +42,25 @@ class BannerBloodDonation(object):
         data = kargs['donate_action']
         
         self.template_path = template_path
-        self.data = data 
-
-
-
+        self.data = data
 
     def save(self, fp, format='png', **params):
         tree = etree.parse(self.template_path)
         d = self.data
 
         recipient_image = d['recipient_image']
-        image_mime_type = mimetypes.guess_type(recipient_image.name)
-        image_base_64 = base64.b64encode(recipient_image.read()).decode('utf-8')
+        image_mime_type = mimetypes.guess_type(recipient_image.name)[0]
+        
+        try:
+            image_base_64 = base64.b64encode(recipient_image.read())
+        except AttributeError as e:
+            image_base_64 = base64.b64encode(recipient_image.body)
+        except Exception as e:
+            raise e
+        
         el_image = tree.xpath(self.el_selectors['recipient_image'], namespaces=NSMAP)[0]
-        el_image.attrib['{http://www.w3.org/1999/xlink}href'] = 'data:{};base64,{}'.format(image_mime_type[0], 
-                                                                                           image_base_64)
+        el_image.attrib['{http://www.w3.org/1999/xlink}href'] = 'data:{};base64,{}'.format(image_mime_type, 
+                                                                                           image_base_64.decode('utf-8'))
         
         recipient_name_parts = d['recipient_name'].split()
         
@@ -90,8 +93,6 @@ class BannerBloodDonation(object):
                                                             self.data['location_address_postal_code'].upper(),)
         
         format = format.lower()
-
-        fp = fp.format(datetime.datetime.utcnow())
 
         if format == 'png':
             return cairosvg.svg2png(bytestring=etree.tostring(tree), write_to=fp)
