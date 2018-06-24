@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hematopy - simple form</title>
+</head>
+<body>
+  <form method="post" action="http://localhost:8081/media_objects" enctype="multipart/form-data">
+    <label>
+      foto
+      <input name="recipient_image" type="file">
+    </label>
+    <label>
+      nome completo
+      <input name="recipient_name" type="text" value="JOSÉ MARIA PEREIRA SOUZA ARUDINO DO SANTOS">
+    </label>
+    <label>
+      tipo sanguineo
+      <input name="recipient_blood_type" type="text" value="AB+">
+    </label>
+    <label>
+      nome do local de doação
+      <input name="location_name" type="text" value="Hemoes">
+    </label>
+    <label>
+      rua/av. do local de doação
+      <input name="location_address_street" type="text" value="Av. Mal. Campos">
+    </label>
+    <label>
+      número do local de doação
+      <input name="location_address_number" type="text" value="1468">
+    </label>
+    <label>
+      bairro do local de doação
+      <input name="location_address_district" type="text" value="Nazareth">
+    </label>
+    <label>
+      cidade do local de doação
+      <input name="location_address_locality" type="text" value="Vitória">
+    </label>
+    <label>
+      estado do local de doação
+      <input name="location_address_region" type="text" value="ES">
+    </label>
+    <label>
+      cep do local de doação
+      <input name="location_address_postal_code" type="text" value="29047-100">
+    </label>
+    <button>Send the file</button>
+  </form>
+  
+</body>
+</html>
