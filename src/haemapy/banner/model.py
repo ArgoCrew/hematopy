@@ -36,7 +36,7 @@ class BannerBloodDonation(object):
                         '{}.{}'.format(filename, extension),)
 
   def _validate_donate_action(self, data):
-    assert isinstance(data, dict)
+    # assert isinstance(data, dict)
     return True
 
   def __init__(self, 
@@ -44,6 +44,7 @@ class BannerBloodDonation(object):
                **kargs):
     template_path = self._make_template_path(template_name)
     assert os.path.exists(template_path)
+    print(kargs['donate_action'])
     data = kargs['donate_action']
     assert self._validate_donate_action(data)
     

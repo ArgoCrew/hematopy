@@ -1,7 +1,7 @@
 import click
 
 from .banner.cli import cli_root as banner_cli
-from .server import cli as server_cli
+from .http.server import cli as server_cli
 
 haemapy_cli = click.CommandCollection(sources=[banner_cli, server_cli])
 
