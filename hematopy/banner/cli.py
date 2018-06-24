@@ -1,3 +1,5 @@
+import datetime
+
 import click
 
 from .model import BannerBloodDonation
@@ -16,8 +18,7 @@ def cli_root_create():
 @cli_root_create.command('banner')
 @click.option('-ri', '--recipient-image', 
               prompt='Image of the person who need blood donation',
-              type=click.File('rb'), help='Image of the person who need blood donation',
-              default='./assets/recipient-photo.jpg')
+              type=click.File('rb'), help='Image of the person who need blood donation',)
 @click.option('-rn', '--recipient-name',
               prompt='Name of Patient',
               help='The name of person who needs donation',
@@ -56,7 +57,7 @@ def cli_root_create():
               default='29047-100')
 @click.option('-o', '--output', 
               help='Path and file name to output',
-              default='./banner-blood-donation-{:%Y-%m-%dT%H-%M-%S}.png')
+              default='./banner-blood-donation-{:%Y-%m-%dT%H-%M-%S}.png'.format(datetime.datetime.utcnow()))
 def cli_root_create_banner(
     recipient_image, recipient_name, recipient_blood_type, 
     location_name, location_address_street, location_address_number, 
