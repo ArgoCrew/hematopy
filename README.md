@@ -22,10 +22,10 @@ pip install -e .
 hematopy serve
 ```
 
-### Create a new banner
+### Create a new donation banner
 
 ```
-python -m src.haemapy.banner.cli create
+hematopy create donation
 ```
 
 

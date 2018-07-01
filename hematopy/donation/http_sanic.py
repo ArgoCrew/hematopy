@@ -10,9 +10,9 @@ from ..http import server
 IMG_HOST_BASE_URL = os.environ.get('IMG_HOST_BASE_URL', 'http://localhost:8000/images/')
 
 
-blueprint_v1 = Blueprint('v1', url_prefix='/api/v1/donations')
+sanic_donation_bp_v1 = Blueprint('v1', url_prefix='/api/v1/donations')
 
-@blueprint_v1.route('/', methods=['POST'])
+@sanic_donation_bp_v1.route('/', methods=['POST'])
 async def create_donation_v1(request):
   def _parse_form_donate_action(request):
     donate_action = {}
