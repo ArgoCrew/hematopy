@@ -18,7 +18,8 @@ def cli_donation_create():
 @cli_donation_create.command('donation')
 @click.option('-ri', '--recipient-image', 
               prompt='Image of the person who need blood donation',
-              type=click.File('rb'), help='Image of the person who need blood donation',)
+              help='Image of the person who need blood donation',
+              type=click.Path(exists=True))
 @click.option('-rn', '--recipient-name',
               prompt='Name of Patient',
               help='The name of person who needs donation',
