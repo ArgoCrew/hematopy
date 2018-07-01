@@ -1,9 +1,9 @@
 import os.path
 import base64
-import mimetypes
 
 import lxml.etree as etree
 import cairosvg
+import magic
 
 FILE_PATH = os.path.dirname(__file__)
 NSMAP = {
@@ -49,20 +49,15 @@ class BannerBloodDonation(object):
         self.template_path = template_path
         self.data = data
 
-    def save(self, fp, format='png', **params):
+    def save(self, fp, **params):
         tree = etree.parse(self.template_path)
         d = self.data
 
-        recipient_image = d['recipient_image']
-        image_mime_type = mimetypes.guess_type(recipient_image.name)[0]
-        
-        try:
-            image_base_64 = base64.b64encode(recipient_image.read())
-        except AttributeError as e:
-            image_base_64 = base64.b64encode(recipient_image.body)
-        except Exception as e:
-            raise e
-        
+        with open(d['recipient_image'], 'rb') as recipient_image:
+            image_data = recipient_image.read()
+            image_mime_type = magic.from_buffer(image_data, mime=True)
+            image_base_64 = base64.b64encode(image_data)
+            
         el_image = tree.xpath(self.el_selectors['recipient_image'], namespaces=NSMAP)[0]
         el_image.attrib['{http://www.w3.org/1999/xlink}href'] = 'data:{};base64,{}'.format(image_mime_type, 
                                                                                            image_base_64.decode('utf-8'))
@@ -97,15 +92,15 @@ class BannerBloodDonation(object):
                                                             self.data['location_address_region'].upper(),
                                                             self.data['location_address_postal_code'].upper(),)
         
-        format = format.lower()
-
-        if format == 'png':
+        file_format = fp.rpartition('.')[-1].lower()
+        
+        if file_format == 'png':
             return cairosvg.svg2png(bytestring=etree.tostring(tree), write_to=fp)
-        if format == 'pdf':
+        if file_format == 'pdf':
             return cairosvg.svg2pdf(bytestring=etree.tostring(tree), write_to=fp)
-        if format == 'ps':
+        if file_format == 'ps':
             return cairosvg.svg2ps(bytestring=etree.tostring(tree), write_to=fp)
-        if format == 'svg':
+        if file_format == 'svg':
             return cairosvg.svg2svg(bytestring=etree.tostring(tree), write_to=fp)
 
         error_message = '''
