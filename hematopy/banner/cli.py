@@ -51,7 +51,7 @@ def cli_root_create():
               prompt='State or Region of place where the blood donation can be made',
               help='State or Region of place where the blood donation can be made',
               default='ES')
-@click.option('-lapo', '--location-address-postal-code', 
+@click.option('-lapc', '--location-address-postal-code', 
               prompt='Postal Code of place where the blood donation can be made',
               help='State or Region of place where the blood donation can be made',
               default='29047-100')
