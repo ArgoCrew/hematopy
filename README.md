@@ -28,14 +28,23 @@ hematopy serve
 python -m src.haemapy.banner.cli create
 ```
 
-curl \
-  -F "user_id=1" \
-  -F "image=@./assets/recipient-photo.jpg" \
-  localhost:8000/api/v1/media_objects
 
+## Web API
 
-curl -i \
-    -H "Accept: application/json" \
-    -H "X-HTTP-Method-Override: PUT" \
-    -X POST -d "value":"30","type":"Tip 3","targetModule":"Target 3","configurationGroup":null,"name":"Configuration Deneme 3","description":null,"identity":"Configuration Deneme 3","version":0,"systemId":3,"active":true \
-    localhost:8000/api/v1/media_objects
+### Create a new donation
+
+```
+curl --request POST \
+  --url https://hematopy-dev-gustavorps.herokuapp.com/api/v1/donations \
+  --header 'Content-Type: multipart/form-data' \
+  --form 'recipient_image=@/path/of/recipient_image.jpg' \
+  --form 'recipient_name=JOSÉ MARIA PEREIRA SOUZA ARUDINO DO SANTOS' \
+  --form 'recipient_blood_type=A+' \
+  --form 'location_name=Hemoes' \
+  --form 'location_address_street=Av. Mal. Campos' \
+  --form 'location_address_number=1468' \
+  --form 'location_address_district=Nazareth' \
+  --form 'location_address_locality=Vitória' \
+  --form 'location_address_region=ES' \
+  --form 'location_address_postal_code=29047-100'
+```
