@@ -1,8 +1,26 @@
 hematopy
 ==============================
 
+## Getting Started
+
+### Development
+
+
+```
+git clone git@github.com:ArgoCrew/hematopy.git
+
+cd hematopy
+
+pip install -e .
+```
+
 
 ## CLI
+
+### Start Server
+```
+hematopy serve
+```
 
 ### Create a new banner
 
