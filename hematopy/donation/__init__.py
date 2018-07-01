@@ -1,0 +1,1 @@
+from .http_sanic import blueprint_v1 as sanic_donation_bp_v1

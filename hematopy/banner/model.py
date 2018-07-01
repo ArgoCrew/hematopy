@@ -18,6 +18,11 @@ NSMAP = {
 
 
 class BannerBloodDonation(object):
+    """Donation Banner 
+
+    Todo:
+        * Move for donation.model package
+    """
 
     templates_directory = os.path.join(FILE_PATH, './template')
     el_selectors = {
