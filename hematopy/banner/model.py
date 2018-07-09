@@ -5,6 +5,8 @@ import lxml.etree as etree
 import cairosvg
 import magic
 
+from ..log import logger
+
 FILE_PATH = os.path.dirname(__file__)
 NSMAP = {
     'sodipodi': 'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd',
@@ -94,6 +96,15 @@ class BannerBloodDonation(object):
         
         file_format = fp.rpartition('.')[-1].lower()
         
+        logger.info({
+            'type': 'banner_generated',
+            'data': {
+                'location_address_district': self.data['location_address_district'],
+                'location_address_locality': self.data['location_address_locality'],
+                'location_address_region': self.data['location_address_region'],
+            }
+        })
+
         if file_format == 'png':
             return cairosvg.svg2png(bytestring=etree.tostring(tree), write_to=fp)
         if file_format == 'pdf':
