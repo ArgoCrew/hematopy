@@ -5,6 +5,8 @@ import lxml.etree as etree
 import cairosvg
 import magic
 
+from ..log import logger
+
 FILE_PATH = os.path.dirname(__file__)
 NSMAP = {
     'sodipodi': 'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd',
@@ -93,15 +95,28 @@ class BannerBloodDonation(object):
                                                             self.data['location_address_postal_code'].upper(),)
         
         file_format = fp.rpartition('.')[-1].lower()
-        
+
         if file_format == 'png':
-            return cairosvg.svg2png(bytestring=etree.tostring(tree), write_to=fp)
+            cairosvg.svg2png(bytestring=etree.tostring(tree), write_to=fp)
         if file_format == 'pdf':
-            return cairosvg.svg2pdf(bytestring=etree.tostring(tree), write_to=fp)
+            cairosvg.svg2pdf(bytestring=etree.tostring(tree), write_to=fp)
         if file_format == 'ps':
-            return cairosvg.svg2ps(bytestring=etree.tostring(tree), write_to=fp)
+            cairosvg.svg2ps(bytestring=etree.tostring(tree), write_to=fp)
         if file_format == 'svg':
-            return cairosvg.svg2svg(bytestring=etree.tostring(tree), write_to=fp)
+            cairosvg.svg2svg(bytestring=etree.tostring(tree), write_to=fp)
+
+        _d = d.copy()
+        (_d.pop(k) for k in 'recipient_name recipient_image'.split())
+        logger.info({
+            'type': 'banner_generated',
+            'data': {
+                'donation': _d,
+                '_meta': {
+                    'file_format': file_format,
+                }
+            },
+        })
+        return True
 
         error_message = '''
 "{}" is invalid file extension! The supported extension is "png". "pdf", "ps" and "svg".

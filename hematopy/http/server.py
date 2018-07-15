@@ -3,6 +3,7 @@ import os
 import click
 from sanic import Sanic
 
+from ..log import logger
 from ..donation.http_sanic import sanic_donation_bp_v1
 
 
@@ -24,6 +25,7 @@ def cli_server():
 
 @cli_server.command('serve')
 def cli_server_serve():
+    logger.info({'type': 'server_start'})
     app.run(host=os.environ.get('HOST', '0.0.0.0'), 
             port=os.environ.get('PORT', 8000),
             debug=os.environ.get('DEBUG', True),)
