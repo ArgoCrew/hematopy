@@ -1,9 +1,9 @@
 hematopy
 ==============================
 
-## Getting Started
+## Instalation
 
-### Development
+### Git
 
 
 ```
@@ -14,12 +14,28 @@ cd hematopy
 pip install -e .
 ```
 
+### pip
+
+```
+pip install hematopy
+```
+
 
 ## CLI
 
 ### Start Server
 ```
-hematopy serve
+$ hematopy serve --help
+Usage: hematopy serve [OPTIONS]
+
+Options:
+  -h, --host TEXT      Host name or IP 
+                       Default: 0.0.0.0
+  -p, --port INTEGER   Port to expose the service 
+                       Default: 8000
+  -d, --debug BOOLEAN  Output debug messages 
+                       Default: True
+  --help               Show this message and exit.
 ```
 
 ### Create a new donation banner
