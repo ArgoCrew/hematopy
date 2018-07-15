@@ -1,9 +1,9 @@
 import click
 
-from .banner.cli import cli_root as banner_cli
-from .http.server import cli as server_cli
+from .donation.cli import cli_donation
+from .http.server import cli_server
 
-main = click.CommandCollection(sources=[banner_cli, server_cli])
+main = click.CommandCollection(sources=[cli_donation, cli_server])
 
 if __name__ == '__main__':
     main()

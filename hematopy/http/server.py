@@ -3,25 +3,29 @@ import os
 import click
 from sanic import Sanic
 
-from ..blood import sanic_blood_bp_v1
+from ..log import logger
+from ..donation.http_sanic import sanic_donation_bp_v1
 
 
-img_dir = os.path.join(os.path.dirname(__file__), 'images/')
+file_dir = os.path.dirname(__file__)
+img_dir = os.path.join(file_dir, 'images/')
 
 if not os.path.exists(img_dir):
     os.makedirs(img_dir)
 
 app = Sanic(__name__)
-app.blueprint(sanic_blood_bp_v1)
+app.static('/', os.path.join(file_dir, 'public/index.html'))
 app.static('/images', img_dir)
+app.blueprint(sanic_donation_bp_v1)
 
 
 @click.group()
-def cli():
+def cli_server():
     pass
 
-@cli.command('serve')
-def cli_serve():
-    app.run(host=os.environ.get('HOST', 'localhost'), 
+@cli_server.command('serve')
+def cli_server_serve():
+    logger.info({'type': 'server_start'})
+    app.run(host=os.environ.get('HOST', '0.0.0.0'), 
             port=os.environ.get('PORT', 8000),
             debug=os.environ.get('DEBUG', True),)

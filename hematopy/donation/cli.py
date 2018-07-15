@@ -2,23 +2,24 @@ import datetime
 
 import click
 
-from .model import BannerBloodDonation
+from ..banner.model import BannerBloodDonation
 
 
 @click.group()
-def cli_root():
+def cli_donation():
     pass
 
     
-@cli_root.group('create')
-def cli_root_create():
+@cli_donation.group('create')
+def cli_donation_create():
     pass
 
 
-@cli_root_create.command('banner')
+@cli_donation_create.command('donation')
 @click.option('-ri', '--recipient-image', 
               prompt='Image of the person who need blood donation',
-              type=click.File('rb'), help='Image of the person who need blood donation',)
+              help='Image of the person who need blood donation',
+              type=click.Path(exists=True))
 @click.option('-rn', '--recipient-name',
               prompt='Name of Patient',
               help='The name of person who needs donation',
@@ -51,14 +52,14 @@ def cli_root_create():
               prompt='State or Region of place where the blood donation can be made',
               help='State or Region of place where the blood donation can be made',
               default='ES')
-@click.option('-lapo', '--location-address-postal-code', 
+@click.option('-lapc', '--location-address-postal-code', 
               prompt='Postal Code of place where the blood donation can be made',
               help='State or Region of place where the blood donation can be made',
               default='29047-100')
 @click.option('-o', '--output', 
               help='Path and file name to output',
               default='./banner-blood-donation-{:%Y-%m-%dT%H-%M-%S}.png'.format(datetime.datetime.utcnow()))
-def cli_root_create_banner(
+def cli_donation_create(
     recipient_image, recipient_name, recipient_blood_type, 
     location_name, location_address_street, location_address_number, 
     location_address_district, location_address_locality,
