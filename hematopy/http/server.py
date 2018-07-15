@@ -16,6 +16,7 @@ if not os.path.exists(img_dir):
 
 app = Sanic(__name__)
 app.static('/', os.path.join(file_dir, 'public/index.html'))
+app.static('/api', os.path.join(file_dir, 'public/api.html'))
 app.static('/images', img_dir)
 app.static('/assets/', assets_dir)
 app.blueprint(sanic_donation_bp_v1)
