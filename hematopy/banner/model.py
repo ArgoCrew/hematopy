@@ -95,24 +95,28 @@ class BannerBloodDonation(object):
                                                             self.data['location_address_postal_code'].upper(),)
         
         file_format = fp.rpartition('.')[-1].lower()
-        
+
+        if file_format == 'png':
+            cairosvg.svg2png(bytestring=etree.tostring(tree), write_to=fp)
+        if file_format == 'pdf':
+            cairosvg.svg2pdf(bytestring=etree.tostring(tree), write_to=fp)
+        if file_format == 'ps':
+            cairosvg.svg2ps(bytestring=etree.tostring(tree), write_to=fp)
+        if file_format == 'svg':
+            cairosvg.svg2svg(bytestring=etree.tostring(tree), write_to=fp)
+
+        _d = d.copy()
+        (_d.pop(k) for k in 'recipient_name recipient_image'.split())
         logger.info({
             'type': 'banner_generated',
             'data': {
-                'location_address_district': self.data['location_address_district'],
-                'location_address_locality': self.data['location_address_locality'],
-                'location_address_region': self.data['location_address_region'],
-            }
+                'donation': _d,
+                '_meta': {
+                    'file_format': file_format,
+                }
+            },
         })
-
-        if file_format == 'png':
-            return cairosvg.svg2png(bytestring=etree.tostring(tree), write_to=fp)
-        if file_format == 'pdf':
-            return cairosvg.svg2pdf(bytestring=etree.tostring(tree), write_to=fp)
-        if file_format == 'ps':
-            return cairosvg.svg2ps(bytestring=etree.tostring(tree), write_to=fp)
-        if file_format == 'svg':
-            return cairosvg.svg2svg(bytestring=etree.tostring(tree), write_to=fp)
+        return True
 
         error_message = '''
 "{}" is invalid file extension! The supported extension is "png". "pdf", "ps" and "svg".
