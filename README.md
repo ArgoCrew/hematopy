@@ -25,7 +25,36 @@ hematopy serve
 ### Create a new donation banner
 
 ```
-hematopy create donation
+$ hematopy create donation --help
+Usage: hematopy create donation [OPTIONS]
+
+Options:
+  -ri, --recipient-image PATH     Image of the person who need blood donation
+  -rn, --recipient-name TEXT      The name of person who needs donation
+  -rbt, --recipient-blood-type [A+|A-|B+|B-|AB+|AB-|O+|O-]
+  -ln, --location-name TEXT       Name of location where the blood donation
+                                  can be made
+                                  Ex.: Hemoes
+  -las, --location-address-street TEXT
+                                  Street address of place where the blood
+                                  donation can be made
+  -lan, --location-address-number TEXT
+                                  Post Office Box Number of place where the
+                                  blood donation can be made
+  -lad, --location-address-district TEXT
+                                  Neighborhood or district of place where the
+                                  blood donation can be made
+  -lal, --location-address-locality TEXT
+                                  City or Locality of place where the blood
+                                  donation can be made
+  -lar, --location-address-region TEXT
+                                  State or Region of place where the blood
+                                  donation can be made
+  -lapc, --location-address-postal-code TEXT
+                                  State or Region of place where the blood
+                                  donation can be made
+  -o, --output TEXT               Path and file name to output
+  --help                          Show this message and exit.
 ```
 
 
