@@ -1,273 +1,237 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Hematopy Web API</title>
-    <style type="text/css">
-      body {
-	font-family: Trebuchet MS, sans-serif;
-	font-size: 15px;
-	color: #444;
-	margin-right: 24px;
-}
+<!DOCTYPE html>
+<html lang="pt">
 
-h1	{
-	font-size: 25px;
-}
-h2	{
-	font-size: 20px;
-}
-h3	{
-	font-size: 16px;
-	font-weight: bold;
-}
-hr	{
-	height: 1px;
-	border: 0;
-	color: #ddd;
-	background-color: #ddd;
-}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-.app-desc {
-  clear: both;
-  margin-left: 20px;
-}
-.param-name {
-  width: 100%;
-}
-.license-info {
-  margin-left: 20px;
-}
+  <title>hematopy - Python e Sangue</title>
 
-.license-url {
-  margin-left: 20px;
-}
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 
-.model {
-  margin: 0 0 0px 20px;
-}
+  <!-- Custom fonts for this template -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-.method {
-  margin-left: 20px;
-}
+  <!-- Custom styles for this template -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
 
-.method-notes	{
-	margin: 10px 0 20px 0;
-	font-size: 90%;
-	color: #555;
-}
+<body>
 
-pre {
-  padding: 10px;
-  margin-bottom: 2px;
-}
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">hematopy</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#funcionalidades">Funcionalidades</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#contato">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-.http-method {
- text-transform: uppercase;
-}
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Uma forma simples de fazer pedidos de <strong>Doação de Sangue</strong></h1>
+          <h2 class="mb-5">Basta nome, endereço e foto</h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form action="/banner-doacao-de-sangue/" method="POST">
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input name="recipient_name" type="text" class="form-control form-control-lg" placeholder="Nome do paciente">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-lg btn-primary">Fazer um Banner!</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
 
-pre.get {
-  background-color: #0f6ab4;
-}
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <span class="features-icons-icon d-flex">
+              <i class="icon-magic-wand m-auto"></i>
+            </span>
+            <h3>Praticidade</h3>
+            <p class="lead mb-0">Faça um banner com todo os dados que o paciente precisa para receber sangue em poucos passos!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <span class="features-icons-icon d-flex">
+              <i class="icon-shuffle m-auto"></i>
+            </span>
+            <h3>Integração</h3>
+            <p class="lead mb-0">API simples e utilizar e com clientes para diversas linguagens: <strong>.Net</strong>, <strong>Java</strong>, <strong>JavaScript</strong>, <strong>Python</strong>, etc!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-graph m-auto"></i>
+            </div>
+            <h3>Informação</h3>
+            <p class="lead mb-0">Tenha dados agregados de pedidos de doação por tipo sanguineo e geolocalização</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-pre.post {
-  background-color: #10a54a;
-}
+  <!-- Image Showcases -->
+  <section id="funcionalidades" class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters mt-5">
+        <div class="col-lg-12 text-center">
+          <h1>Funcionalidades</h1>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('http://marvingpp.com/wp-content/uploads/2017/10/1-2-3.png'); background-size: contain;"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Gerador de Banner</h2>
+          <p class="lead mb-0">Faça um banner com todo os dados que o paciente precisa para receber sangue em poucos passos!</p>
+          <a class="btn btn-lg" href="#">Testar</a>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('https://c1.staticflickr.com/2/1243/786542497_b3a11e0f6c_b.jpg'); background-size: cover;"></div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2>API REST</h2>
+          <p class="lead mb-0">Faça integrações com uma API simples e fácil de utilizar e com clientes para diversas linguagens: <strong>.Net</strong>, <strong>Java</strong>, <strong>JavaScript</strong>, <strong>Python</strong>, etc!</p>
+          <a class="btn btn-lg" href="#">Documentação</a>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('http://media2.govtech.com/images/940*626/analytics.jpg'); background-size: contain;"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Relatórios</h2>
+          <p class="lead mb-0">Veja quais são os locais onde mais são requisitádos doações de sangue, tipos sanguineo mais demandado, quais horários mais acessados.</p>
+          <a class="btn btn-lg" href="#">Exemplo</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-pre.put {
-  background-color: #c5862b;
-}
+  <!-- Testimonials -->
+  <!-- <section class="testimonials text-center bg-light">
+    <div class="container">
+      <h2 class="mb-5">What people are saying...</h2>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
+            <h5>Margaret E.</h5>
+            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
+            <h5>Fred S.</h5>
+            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
+            <h5>Sarah W.</h5>
+            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
 
-pre.delete {
-  background-color: #a41e22;
-}
+  <!-- Call to Action -->
+  <section id="contato" class="call-to-action text-white text-center">
+    <div class="overlay"></div>
+    <div class="row">
+      <div class="col-xl-9 my-5 mx-auto">
+        <h2 class="mb-4">Que saber mais? Assine nossa newsletter!</h2>
+      </div>
+      <div class="col-md-12 col-lg-12 col-xl-12 mx-auto">
+        <!-- <form>
+          <div class="form-row">
+            <div class="col-12 col-md-9 mb-2 mb-md-0">
+              <input type="email" class="form-control form-control-lg" placeholder="Informe seu email...">
+            </div>
+            <div class="col-12 col-md-3">
+              <button type="submit" class="btn btn-block btn-lg btn-primary">Assinar!</button>
+            </div>
+          </div>
+        </form> -->
+        <div class="typeform-widget" data-url="https://argocrew.typeform.com/to/GANer5" data-transparency="10" data-hide-headers=true data-hide-footer=true style="width: 100%; height: 500px;"></div>
+        <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+      </div>
+    </div>
+  </section>
 
-.huge	{
-	color: #fff;
-}
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <!-- <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul> -->
+          <p class="text-muted small mb-4 mb-lg-0">ↄ hematopy 2018. Alguns direitos reservados.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="https://github.com/ArgoCrew/hematopy/" target="_blank">
+                <i class="fa fa-github fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-pre.example {
-  background-color: #f3f3f3;
-  padding: 10px;
-  border: 1px solid #ddd;
-}
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 
-code {
-  white-space: pre;
-}
-
-.nickname {
-  font-weight: bold;
-}
-
-.method-path {
-  font-size: 1.5em;
-  background-color: #0f6ab4;
-}
-
-.up {
-  float:right;
-}
-
-.parameter {
-  width: 500px;
-}
-
-.param {
-  width: 500px;
-  padding: 10px 0 0 20px;
-  font-weight: bold;
-}
-
-.param-desc {
-  width: 700px;
-  padding: 0 0 0 20px;
-  color: #777;
-}
-
-.param-type {
-  font-style: italic;
-}
-
-.param-enum-header {
-width: 700px;
-padding: 0 0 0 60px;
-color: #777;
-font-weight: bold;
-}
-
-.param-enum {
-width: 700px;
-padding: 0 0 0 80px;
-color: #777;
-font-style: italic;
-}
-
-.field-label {
-  padding: 0;
-  margin: 0;
-  clear: both;
-}
-
-.field-items	{
-	padding: 0 0 15px 0;
-	margin-bottom: 15px;
-}
-
-.return-type {
-  clear: both;
-  padding-bottom: 10px;
-}
-
-.param-header {
-  font-weight: bold;
-}
-
-.method-tags {
-  text-align: right;
-}
-
-.method-tag {
-  background: none repeat scroll 0% 0% #24A600;
-  border-radius: 3px;
-  padding: 2px 10px;
-  margin: 2px;
-  color: #FFF;
-  display: inline-block;
-  text-decoration: none;
-}
-
-    </style>
-  </head>
-  <body>
-  <h1>Hematopy Web API</h1>
-    <div class="app-desc">Python and Blood</div>
-    <div class="app-desc">More information: <a href="https://github.com/ArgoCrew/hematopy">https://github.com/ArgoCrew/hematopy</a></div>
-    <div class="app-desc">Contact Info: <a href="contact+hematopy@argocrew.io">contact+hematopy@argocrew.io</a></div>
-    <div class="app-desc">Version: v1</div>
-    <div class="app-desc">BasePath:/api/v1/</div>
-    <div class="license-info">All rights reserved</div>
-    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
-  <h2>Access</h2>
-
-  <h2><a name="__Methods">Methods</a></h2>
-  [ Jump to <a href="#__Models">Models</a> ]
-
-  <h3>Table of Contents </h3>
-  <div class="method-summary"></div>
-  <h4><a href="#Donation">Donation</a></h4>
-  <ul>
-  <li><a href="#createDonation"><code><span class="http-method">post</span> /donations</code></a></li>
-  </ul>
-
-  <h1><a name="Donation">Donation</a></h1>
-  <div class="method"><a name="createDonation"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /donations</code></pre></div>
-    <div class="method-summary">Add a new donation and generate image banner (<span class="nickname">createDonation</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/x-www-form-urlencoded</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body <a href="#DonateAction">DonateAction</a> (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
-
-    </div>  <!-- field-items -->
-
-
-
-
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">405</h4>
-    Invalid input
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-
-  <h2><a name="__Models">Models</a></h2>
-  [ Jump to <a href="#__Methods">Methods</a> ]
-
-  <h3>Table of Contents</h3>
-  <ol>
-    <li><a href="#DonateAction"><code>DonateAction</code> - </a></li>
-  </ol>
-
-  <div class="model">
-    <h3><a name="DonateAction"><code>DonateAction</code> - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'></div>
-    <div class="field-items">
-      <div class="param">recipient_image </div><div class="param-desc"><span class="param-type"><a href="#binary">byte[]</a></span>  format: binary</div>
-<div class="param">recipient_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">recipient_blood_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-        <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">A-</div><div class="param-enum">A+</div><div class="param-enum">B-</div><div class="param-enum">B+</div><div class="param-enum">AB-</div><div class="param-enum">AB+</div><div class="param-enum">O-</div><div class="param-enum">O+</div>
-<div class="param">location_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">location_address_street </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">location_address_number </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">location_address_district </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">location_address_locality </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">location_address_region </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">location_address_postal_code </div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  </div>
-    </div>  <!-- field-items -->
-  </div>
-  </body>
+</body>
 </html>
