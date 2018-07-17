@@ -85,4 +85,5 @@ target/
 .DS_Store
 
 # Project
-/hematopy/http/images
+/src/hematopy/http/images
+*.pid

@@ -6,19 +6,23 @@ import setuptools
 with open('README.md', 'r') as f:
     long_description = f.read()
 
-with open('requirements.txt', 'r') as f:
-    install_requires = f.read().split('\n')
-
 setuptools.setup(
     name='hematopy',
     description='Python and Blood',
-    version='0.0.1.dev9',
+    version='0.0.2.dev1',
     author='Gustavo RPS @ ArgoCrew/ArgoPy',
     author_email='gustavorps+hematopy@argocrew.io',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    packages=setuptools.find_packages(),
-    install_requires=install_requires,
+    package_dir={'': 'src'},
+    packages=setuptools.find_packages(where='src'),
+    install_requires=[
+        'CairoSVG==2.1.3',
+        'click==6.7',
+        'sanic==0.7.0',
+        'lxml==4.2.1',
+        'python-magic==0.4.15'
+    ],
     # package_dir={'':'hematopy'},
     entry_points = {
         'console_scripts': [
