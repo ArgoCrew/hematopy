@@ -118,6 +118,7 @@ class BannerBloodDonation(object):
             cairosvg.svg2ps(bytestring=etree.tostring(tree), write_to=fp)
         if file_format == 'svg':
             cairosvg.svg2svg(bytestring=etree.tostring(tree), write_to=fp)
+        
 
         if uri.scheme == 'gs':
             client = storage.storage_gc.Client()
