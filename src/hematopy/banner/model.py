@@ -1,5 +1,6 @@
 import os
 import base64
+from urllib.parse import urlparse
 
 import lxml.etree as etree
 import cairosvg
@@ -55,7 +56,7 @@ class BannerBloodDonation(object):
         self.template_path = template_path
         self.data = data
 
-    def save(self, fp, **kargs):
+    def save(self, uri_dest, **kargs):
         tree = etree.parse(self.template_path)
         d = self.data
 
@@ -98,14 +99,16 @@ class BannerBloodDonation(object):
                                                             self.data['location_address_region'].upper(),
                                                             self.data['location_address_postal_code'].upper(),)
         
-        file_format = fp.rpartition('.')[-1].lower()
-        uri_schema = fp.rpartition(':')[0].lower()
+        uri = urlparse(uri_dest)
+        file_format = uri.path.rpartition('.')[-1].lower()
         file_args = {
             'uid': self.uid,
             'format': file_format}
 
-        if uri_schema == 'gs':
+        if uri.scheme == 'gs':
             fp = '/tmp/hematopy-img-{uid}.{format}'.format(**file_args)
+        else:
+            fp = uri.path.format(**file_args)
 
         if file_format == 'png':
             cairosvg.svg2png(bytestring=etree.tostring(tree), write_to=fp)
@@ -115,16 +118,15 @@ class BannerBloodDonation(object):
             cairosvg.svg2ps(bytestring=etree.tostring(tree), write_to=fp)
         if file_format == 'svg':
             cairosvg.svg2svg(bytestring=etree.tostring(tree), write_to=fp)
-        
 
-        if uri_schema == 'gs':
+        if uri.scheme == 'gs':
             client = storage.storage_gc.Client()
-            file_path = 'img/{uid}.{format}'.format(**file_args)
+            file_path = uri.path.format(**file_args)
 
             with open(fp, 'rb') as file:
                 object_stream = storage.GCSObjectStreamUpload(
                     client,
-                    bucket_name=kargs.get('bucket_name', 'hematopy-bucket-dev.gustavorps.net'),
+                    bucket_name=uri.netloc,
                     blob_name=file_path,)
                 
                 def file_read_chunked(file, chunk_size):

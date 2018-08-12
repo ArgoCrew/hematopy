@@ -2,6 +2,14 @@ hematopy
 ==============================
 [![Build Status](https://travis-ci.org/ArgoCrew/hematopy.svg?branch=master)](https://travis-ci.org/ArgoCrew/hematopy)
 
+
+## Features
+
+- Generate `png`, `pdf`, `ps` and `svg` Banner from a `SVG` template
+- Upload generated banners to [Google Cloud Storage]()
+- RestFul API
+
+
 ## Instalation
 
 ### Git
@@ -70,12 +78,14 @@ Options:
   -lapc, --location-address-postal-code TEXT
                                   State or Region of place where the blood
                                   donation can be made
-  -o, --output TEXT               Path and file name to output
+  -o, --output TEXT               Path and file name to output. Ex.:
+                                  gs://bucket-name/banner-name.png
+                                  ./bannername.png
   --help                          Show this message and exit.
 ```
 
 
-## Web API
+## RestFul API
 
 ### Create a new donation
 
