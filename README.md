@@ -1,5 +1,6 @@
-hematopy
+hematopy 
 ==============================
+[![Build Status](https://travis-ci.org/ArgoCrew/hematopy.svg?branch=master)](https://travis-ci.org/ArgoCrew/hematopy)
 
 ## Instalation
 
