@@ -88,3 +88,4 @@ target/
 /src/hematopy/http/images
 *.pid
 .pytest_cache
+node_modules/
