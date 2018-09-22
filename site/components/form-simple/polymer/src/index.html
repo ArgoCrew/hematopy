@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@next/webcomponents-loader.js"></script>
+    
+    <script type="module" src="https://unpkg.com/@material/mwc-formfield@^0.1.0/mwc-formfield.js?module"></script>
+    <script type="module" src="https://unpkg.com/@material/mwc-checkbox@0.1.2/mwc-checkbox.js?module"></script>
+  </head>
+  <body class="notDefined">
+    
+    <form id="hemato-form" action="" method="post" accept-charset="utf-8">
+      <mwc-formfield label="Foto do Paciênte" alignend="">
+        <input name="recipient-image" type="file">
+      </mwc-formfield>
+
+      <mwc-formfield label="Nome do Paciênte" alignend="">
+        <input name="recipient-name" type="text">
+      </mwc-formfield>
+
+      <mwc-formfield label="Tipo Sanguineo" alignend="">
+        <select name="recipient-blood-type">
+          <!-- ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] -->
+          <option value=""></option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+      </mwc-formfield>
+
+      <mwc-formfield label="Estado" class="hide" alignend="">
+        <select name="location-address-region">
+          <!-- ['ES'] -->
+          <option value=""></option>
+          <option value="ES" selected>ES</option>
+        </select>
+      </mwc-formfield>
+
+      <mwc-formfield label="Cidade" class="hide" alignend="">
+        <select name="location-address-locality">
+          <!-- ['Serra', 'Vitória', 'Cariacica', 'Vila Velha'] -->
+          <option value=""></option>
+          <option value="Serra" selected>Serra</option>
+          <option value="Vitória">Vitória</option>
+          <option value="Cariacica">Cariacica</option>
+          <option value="Vila Velha">Vila Velha</option>
+        </select>
+      </mwc-formfield>
+
+      <mwc-formfield label="Bairro" alignend="" class="hide">
+        <input name="location-address-district" type="text">
+      </mwc-formfield>
+
+      <mwc-formfield label="Logradouro (Av. Rua, etc)" class="hide" alignend="">
+        <input name="location-address-street" type="text">
+      </mwc-formfield>
+
+      <mwc-formfield label="Número" class="hide" alignend="">
+        <input name="location-address-street" type="text">
+      </mwc-formfield>
+
+      <mwc-formfield alignend="">
+        <button type="submit">Criar</button>
+      </mwc-formfield>
+    </form>
+
+    <style>
+      body {
+        font-family: Roboto, sans-serif;
+        margin: 0;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      #hemato-form {
+        width: 450px;
+        height: 381px;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+
+      #hemato-form mwc-formfield {
+        /* This is the bit that moves. It has 4 images, so 4 * 450 = 1800. You could use javascript
+        to work this out instead by counting images. */
+
+        -webkit-transition:all 1.0s ease-in-out;
+        -moz-transition:all 1.0s ease-in-out;
+        -o-transition:all 1.0s ease-in-out;
+        transition:all 1.0s ease-in-out;
+
+        background-color: gray;
+        height: 281px;
+      }
+    </style>
+    <script>
+      addEventListener('WebComponentsReady', () => document.body.classList.remove('notDefined'))
+
+      $(document).ready(function() {
+        $('#hemato input:focus, #hemato select:focus').on('onkeypress', function(){
+          if (e.keyCode == 13) {
+            $('#hemato-form mwc-formfield').css('transform',"translateX("+$(this).index() * -450+"px)");
+            return false;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
