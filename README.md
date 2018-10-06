@@ -104,3 +104,32 @@ curl --request POST \
   --form 'location_address_region=ES' \
   --form 'location_address_postal_code=29047-100'
 ```
+
+## Development
+
+### Setup
+
+1. Clone
+    ```
+    $ git clone <REPO_FORK_URL>
+    ```
+
+2. Install
+    ```
+    $ pip install -e .
+    ```
+
+3. Set environment variables
+    **Linux**
+    ```
+    $ export GOOGLE_APPLICATION_CREDENTIALS=PATH/TO/APPLICATION/CREDENTIALS.json
+    $ export HEMATOPY__CORE__IMG_DST_GCS=gs://YOUR_BUCKET/IMAGES/DESTINATION/DIRECTORY
+    ```
+
+
+
+### Testing
+
+```
+$ python setup.py test
+```

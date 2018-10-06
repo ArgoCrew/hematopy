@@ -34,7 +34,7 @@ def test_cli_command_create_local(script_runner):
     os.remove(arg_output)
 
 def test_cli_command_create_gcs(script_runner):
-    arg_output_path = os.environ['HEMATOPY__CORE__IMG_DST']
+    arg_output_path = os.environ['HEMATOPY__CORE__IMG_DST_GCS']
     arg_output = os.path.join(arg_output_path, 'test-banner-{uid}.png')
     
     ret = script_runner.run('hematopy', 'create', 'donation', 
