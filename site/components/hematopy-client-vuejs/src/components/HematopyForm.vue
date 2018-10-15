@@ -1,46 +1,217 @@
 <template>
-    <section class="hero is-white is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <form action="">
-            <input type="text" v-model="recipientImage">
-            <input type="text" v-model="recipientName">
-            <input type="text" v-model="recipientBloodType">
-            <input type="text" v-model="locationAddressRegion">
-            <input type="text" v-model="locationAddressLocality">
-            <input type="text" v-model="locationAddressDistrict">
-            <input type="text" v-model="locationAddressStreet">
-            <input type="text" v-model="locationAddressNumber">
-            <button>
-              enviar
-            </button>
-          </form>
-        </div>
+ <div>
+    <div id="progress"></div>
+
+  <div class="center">
+    <div class="image-upload">
+      <label for="file-input">
+        <i class="fa fa-upload" aria-hidden="true"></i>
+      </label>
+
+      <input id="file-input" type="file" >
+      <h3 class="title">
+        Foto do paciente
+      </h3>
+    </div>
+    <div id="register" v-if="false">
+      <i id="previousButton" class="ion-android-arrow-back"></i>
+      <i id="forwardButton" class="ion-android-arrow-forward"></i>
+
+      <div id="inputContainer">        
+        <!-- <input type="text" placeholder="Informe o nome do paciente">
+        <input type="text" placeholder="Informe o nome do paciente"> -->
+        <!-- <input id="inputField" required multiple /> -->
+        <!-- <label id="inputLabel"></label>
+        <div id="inputProgress"></div> -->
       </div>
-    </section>
+    </div>
+  </div>
+ </div>
 </template>
 
 <script>
+import Api from '@/services/Api'
+import recipients from '../assets/recipients.js'
+
 export default {
   name: 'HematopyForm',
-  props: ['questions']
+  data () {
+    return {
+      model: {
+        recipientImage: {},
+        recipientName: '',
+        recipientBloodType: '',
+        locationAddressRegion: '',
+        locationAddressLocality: '',
+        locationAddressDistrict: '',
+        locationAddressStreet: '',
+        locationAddressNumber: ''
+      },
+      selectedFile: null,
+      recipients
+    }
+  },
+  methods: {
+    onFileSelected (event) {
+      this.selectedFile = event.target.files[0]
+    },
+    onUpload (params) {
+      Api.createBanner(params)
+        .then(res => {
+          console.log(res)
+        })
+    },
+    saveForm () {
+      console.log(this.model)
+    },
+    onComplete () {
+      let h1 = document.createElement('h1')
+      h1.appendChild(document.createTextNode('Thanks ' + recipients[0].answer + ' for checking this pen out!'))
+      setTimeout(() => {
+        register.parentElement.appendChild(h1)
+        setTimeout(() => { h1.style.opacity = 1 }, 50)
+      }, 1000)
+    },
+    getInputById (id) {},
+    putRecipient () {
+      let inputLabel = ''
+      inputLabel.innerHtml = recipients[index].question
+    }
+    
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+body {
+  margin: 0;
+  background: #fbc02d;
+  font-family: 'Noto Sans', sans-serif;
+  overflow-x: hidden;
 }
-ul {
-  list-style-type: none;
+
+h1 {
+  position: relative;
+  color: #fff;
+  opacity: 0;
+  transition: .8s ease-in-out;
+}
+
+#progress {
+  position: absolute;
+  background: #c49000;
+  height: 100vh;
+  width: 0;
+  transition: width 0.2s ease-in-out;
+}
+
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#register {
+  background: #fff;
+  position: relative;
+  width: 550px;
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+  transition: transform .1s ease-in-out;
+}
+
+#register.close {
+  width: 0;
   padding: 0;
+  overflow: hidden;
+  transition: .8s ease-in-out;
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,0);
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+#forwardButton {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+  font-size: 40px;
+  color: #fbc02d;
+  float: right;
+  cursor: pointer;
+  z-index: 20
 }
-a {
-  color: #42b983;
+#previousButton {
+  position: absolute;
+  font-size: 18px;
+  left: 30px; /* same as padding on container */
+  top: 12px;
+  z-index: 20;
+  color: #9e9e9e;
+  float: right;
+  cursor: pointer;
+}
+#previousButton:hover {color: #c49000}
+#forwardButton:hover {color: #c49000}
+.wrong #forwardButton {color: #ff2d26}
+.close #forwardButton, .close #previousButton {color: #fff}
+
+#inputContainer {
+  position: relative;
+  padding: 30px 20px 20px 20px;
+  margin: 10px 60px 10px 10px;
+  opacity: 0.5;
+  transition: opacity .3s ease-in-out;
+}
+
+#inputContainer input {
+  position: relative;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+#inputLabel {
+  position: absolute;
+  pointer-events: none;
+  top: 32px; /* same as container padding + margin */
+  left: 20px; /* same as container padding */
+  font-size: 20px;
+  font-weight: bold;
+  transition: .2s ease-in-out;
+}
+
+#inputContainer input:valid + #inputLabel {
+  top: 6px;
+  left: 42px; /* space for previous arrow */
+  margin-left: 0!important;
+  font-size: 11px;
+  font-weight: normal;
+  color: #9e9e9e;
+}
+
+#inputProgress {
+  border-bottom: 3px solid #fbc02d;
+  width: 0;
+  transition: width .6s ease-in-out;
+}
+
+.wrong #inputProgress {
+  border-color: #ff2d26;
+}
+
+@media (max-width: 420px) {
+  #forwardButton {right: 10px}
+  #previousButton {left: 10px}
+  #inputLabel {left: 0}
+  #inputContainer {padding-left: 0; margin-right:20px}
+}
+
+i.fa-upload {
+  cursor: pointer;
+  font-size: 10em;
 }
 </style>

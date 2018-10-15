@@ -1,4 +1,4 @@
-# hematopy-client-vuejs
+# HEMATOPY - VUE.JS CLIENT
 
 ## Project setup
 ```
@@ -23,4 +23,9 @@ npm run lint
 ### Run your unit tests
 ```
 npm run test:unit
+```
+
+### Run mock rest with json-server
+```
+npm run mock:rest
 ```
