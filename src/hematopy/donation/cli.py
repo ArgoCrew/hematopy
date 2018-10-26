@@ -22,43 +22,36 @@ def cli_donation_create():
               type=click.Path(exists=True))
 @click.option('-rn', '--recipient-name',
               prompt='Name of Patient',
-              help='The name of person who needs donation',
-              default='JOSÉ MARIA PEREIRA SOUZA ARUDINO DO SANTOS')
+              help='The name of person who needs donation',)
 @click.option('-rbt', '--recipient-blood-type',
               prompt='Blood Type of Patient',
-              type=click.Choice(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']),
-              default='AB+')
+              type=click.Choice(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']),)
 @click.option('-ln', '--location-name', 
               prompt='Name of location where the blood donation can be made',
-              help='Name of location where the blood donation can be made\nEx.: Hemoes',
-              default='Hemoes')
+              help='Name of location where the blood donation can be made\nEx.: Hemoes',)
 @click.option('-las', '--location-address-street', 
               prompt='Street address of place where the blood donation can be made',
-              help='Street address of place where the blood donation can be made',
-              default='Av. Mal. Campos')
+              help='Street address of place where the blood donation can be made',)
 @click.option('-lan', '--location-address-number', 
               prompt='Post Office Box Number of place where the blood donation can be made',
-              help='Post Office Box Number of place where the blood donation can be made',
-              default='1468')
+              help='Post Office Box Number of place where the blood donation can be made',)
 @click.option('-lad', '--location-address-district', 
               prompt='Neighborhood or District of place where the blood donation can be made',
-              help='Neighborhood or district of place where the blood donation can be made',
-              default='Nazareth')
+              help='Neighborhood or district of place where the blood donation can be made',)
 @click.option('-lal', '--location-address-locality', 
               prompt='City or Locality of place where the blood donation can be made',
-              help='City or Locality of place where the blood donation can be made',
-              default='Vitória')
+              help='City or Locality of place where the blood donation can be made',)
 @click.option('-lar', '--location-address-region', 
               prompt='State or Region of place where the blood donation can be made',
-              help='State or Region of place where the blood donation can be made',
-              default='ES')
+              help='State or Region of place where the blood donation can be made',)
 @click.option('-lapc', '--location-address-postal-code', 
               prompt='Postal Code of place where the blood donation can be made',
-              help='State or Region of place where the blood donation can be made',
-              default='29047-100')
+              help='State or Region of place where the blood donation can be made',)
 @click.option('-o', '--output', 
-              help='Path and file name to output',
-              default='./banner-blood-donation-{:%Y-%m-%dT%H-%M-%S}.png'.format(datetime.datetime.utcnow()))
+              help='''Path and file name to output. Ex.:
+                      gs://bucket-name/banner-name.png
+                      ./bannername.png''',
+              default='./hematopy-banner-blood-donation-{uid}.png')
 def cli_donation_create(
     recipient_image, recipient_name, recipient_blood_type, 
     location_name, location_address_street, location_address_number, 

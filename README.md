@@ -2,6 +2,14 @@ hematopy
 ==============================
 [![Build Status](https://travis-ci.org/ArgoCrew/hematopy.svg?branch=master)](https://travis-ci.org/ArgoCrew/hematopy)
 
+
+## Features
+
+- Generate `png`, `pdf`, `ps` and `svg` Banner from a `SVG` template
+- Upload generated banners to [Google Cloud Storage]()
+- RestFul API
+
+
 ## Instalation
 
 ### Git
@@ -70,12 +78,14 @@ Options:
   -lapc, --location-address-postal-code TEXT
                                   State or Region of place where the blood
                                   donation can be made
-  -o, --output TEXT               Path and file name to output
+  -o, --output TEXT               Path and file name to output. Ex.:
+                                  gs://bucket-name/banner-name.png
+                                  ./bannername.png
   --help                          Show this message and exit.
 ```
 
 
-## Web API
+## RestFul API
 
 ### Create a new donation
 
@@ -93,4 +103,33 @@ curl --request POST \
   --form 'location_address_locality=Vitória' \
   --form 'location_address_region=ES' \
   --form 'location_address_postal_code=29047-100'
+```
+
+## Development
+
+### Setup
+
+1. Clone
+    ```
+    $ git clone <REPO_FORK_URL>
+    ```
+
+2. Install
+    ```
+    $ pip install -e .
+    ```
+
+3. Set environment variables
+    **Linux**
+    ```
+    $ export GOOGLE_APPLICATION_CREDENTIALS=PATH/TO/APPLICATION/CREDENTIALS.json
+    $ export HEMATOPY__CORE__IMG_DST_GCS=gs://YOUR_BUCKET/IMAGES/DESTINATION/DIRECTORY
+    ```
+
+
+
+### Testing
+
+```
+$ python setup.py test
 ```
