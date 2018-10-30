@@ -8,22 +8,22 @@
       <button @click="addMarker">Add</button>
     </label>
     <br/>
-  </div>  
+  </div>
 </template>
 
 <script>
 export default {
-  name: "GoogleMap",
-  data() {
+  name: 'GoogleMap',
+  data () {
     return {
       places: [],
       currentPlace: null
-    };
+    }
   },
   methods: {
-    setPlace(place) {
-      this.currentPlace = place;
+    setPlace (place) {
+      this.currentPlace = place
     }
   }
-};
+}
 </script>

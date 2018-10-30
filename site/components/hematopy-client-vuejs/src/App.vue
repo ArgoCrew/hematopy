@@ -3,7 +3,8 @@
     <section class="hero is-white is-fullheight">
       <div class="hero-body">
         <div class="container">
-          <hematopy-form></hematopy-form>
+          <!-- <hematopy-form></hematopy-form> -->
+          <FileUpload></FileUpload>
         </div>
       </div>
     </section>
@@ -11,13 +12,14 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import HematopyForm from './components/HematopyForm.vue'
+import FileUpload from './components/FileUpload.vue'
 
 export default {
   name: 'app',
   components: {
-    HematopyForm
+    HematopyForm,
+    FileUpload
   }
 }
 </script>
@@ -25,6 +27,7 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
 @import url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+// @import '../node_modules/bulma/css/bulma.min.css';
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

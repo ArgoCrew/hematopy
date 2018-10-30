@@ -1,23 +1,12 @@
 <template>
  <div>
-    <div id="progress"></div>
-
+  <div id="progress"></div>
   <div class="center">
-    <div class="image-upload">
-      <label for="file-input">
-        <i class="fa fa-upload" aria-hidden="true"></i>
-      </label>
-
-      <input id="file-input" type="file" >
-      <h3 class="title">
-        Foto do paciente
-      </h3>
-    </div>
     <div id="register" v-if="false">
       <i id="previousButton" class="ion-android-arrow-back"></i>
       <i id="forwardButton" class="ion-android-arrow-forward"></i>
 
-      <div id="inputContainer">        
+      <div id="inputContainer">
         <!-- <input type="text" placeholder="Informe o nome do paciente">
         <input type="text" placeholder="Informe o nome do paciente"> -->
         <!-- <input id="inputField" required multiple /> -->
@@ -77,7 +66,7 @@ export default {
       let inputLabel = ''
       inputLabel.innerHtml = recipients[index].question
     }
-    
+
   }
 }
 </script>
