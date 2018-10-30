@@ -1,45 +1,54 @@
 <template>
-  <div class="file-upload">
-    <div class="title">
-      <h3 class="title">
-        Foto do paciente
-      </h3>
-    </div>
-    <div class="icon">
-      <label for="file-input">
-        <i class="fa fa-camera" aria-hidden="true"
-          v-if="!fileExists"></i>
-      </label>
-    </div>
-    <div class="action">
-      <input id="file-input" type="file"
-        @change="onFileChange" hidden/>
-    </div>
-    <div class="columns">
-      <div class="column">
-        <div class="preview">
-          <div class="image">
-            <figure class="image is-128x128 has-image-centered">
-              <img src="" class=" is-rounded" alt="Imagem do paciente"
-                v-show="fileExists">
-            </figure>
-            <span>
-              {{ file.name }}
-            </span>
+  <div class="columns">
+    <div class="column">
+      <div class="file-upload">
+        <div class="columns">
+          <div class="column">
+            <div class="title">
+              <h3 class="title">
+                Foto do paciente
+              </h3>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column">
-        <div class="close-btn">
-          <a class="button"
-            @click.prevent="cancelViewFile"
-            v-if="fileExists">Remover imagem</a>
+        <div class="columns" v-if="!fileExists">
+          <div class="column">
+            <div class="icon">
+              <label for="file-input">
+                <i class="fa fa-camera" aria-hidden="true"></i>
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="action">
+          <input id="file-input" type="file"
+            @change="onFileChange" hidden/>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <div class="preview">
+              <div class="image">
+                <figure class="image is-128x128 has-image-centered">
+                  <img src="" class=" is-rounded" alt="Imagem do paciente"
+                    v-show="fileExists">
+                </figure>
+                <span>
+                  {{ file.name }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <div class="close-btn">
+              <a class="button"
+                @click.prevent="cancelViewFile"
+                v-if="fileExists">Remover imagem</a>
+            </div>
+          </div>
+        </div>
     </div>
-
   </div>
 </template>
 <script>
@@ -97,25 +106,21 @@ export default {
 </script>
 <style lang="scss" scoped>
 .file-upload {
-  > .title {
-    margin-bottom: 3em;
-  }
-  > .icon {
-    font-size: 8em;
-    > label {
-      > i {
-        cursor: pointer;
-      }
+  > .columns {
+    > .column {
     }
   }
-
-  > .preview {
-    > .image {
-      > figure {
-        > .figcaption {
-          margin: 10px 0;
-          text-transform: uppercase;
-          color: #000000;
+  .columns {
+    .column {
+      > .title {
+      }
+      .icon {
+        // padding: 0.1em 0;
+        font-size: 3em;
+        > label {
+          > i {
+            cursor: pointer;
+          }
         }
       }
     }

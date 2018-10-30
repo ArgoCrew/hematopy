@@ -26,11 +26,12 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Karla');
 @import url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 // @import '../node_modules/bulma/css/bulma.min.css';
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Karla', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
