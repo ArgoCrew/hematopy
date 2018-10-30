@@ -15,22 +15,29 @@
       <input id="file-input" type="file"
         @change="onFileChange" hidden/>
     </div>
-
-    <div class="preview">
-      <div class="image">
-        <figure class="image is-128x128 has-image-centered">
-          <img src="" class="is-rounded" alt="Imagem do paciente"
-            v-show="fileExists">
-          <figcaption class="figcaption">
-            {{ file.name }}
-          </figcaption>
-        </figure>
+    <div class="columns">
+      <div class="column">
+        <div class="preview">
+          <div class="image">
+            <figure class="image is-128x128 has-image-centered">
+              <img src="" class=" is-rounded" alt="Imagem do paciente"
+                v-show="fileExists">
+            </figure>
+            <span>
+              {{ file.name }}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="close-btn">
-      <a class="button"
-        @click.prevent="cancelViewFile"
-        v-if="fileExists">Remover imagem</a>
+    <div class="columns">
+      <div class="column">
+        <div class="close-btn">
+          <a class="button"
+            @click.prevent="cancelViewFile"
+            v-if="fileExists">Remover imagem</a>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -70,7 +77,8 @@ export default {
       }
     },
     cancelViewFile (e) {
-      let file = document.querySelector('input[type=file]').files[0]
+      let file = document.querySelector('input[type=file]')
+      file.value = ''
       this.file.name = ''
     },
     setBase64 (_urlBase64) {
@@ -82,7 +90,6 @@ export default {
   },
   computed: {
     fileExists: function () {
-      // `this` aponta para a instância Vue da variável `vm`
       return this.file.name.length > 0
     }
   }
