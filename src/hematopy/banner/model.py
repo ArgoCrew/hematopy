@@ -35,7 +35,7 @@ class BannerBloodDonation(object):
         'recipient_image': '//svg:image[@id="recipient_image"]',
         'recipient_name_part_1': '//svg:tspan[@id="recipient_name_part_1"]',
         'recipient_name_part_2': '//svg:tspan[@id="recipient_name_part_2"]',
-        'recipient_blood_type': '//svg:tspan[@id="recipient_blood_type"]',
+        'recipient_bloodtype': '//svg:tspan[@id="recipient_bloodtype"]',
         'location_name': '//svg:tspan[@id="location_name"]',
         'location_address_part_1': '//svg:tspan[@id="location_address_part_1"]',
         'location_address_part_2': '//svg:tspan[@id="location_address_part_2"]',
@@ -83,8 +83,8 @@ class BannerBloodDonation(object):
         el_r_name_part_2 = tree.xpath(self.el_selectors['recipient_name_part_2'], namespaces=NSMAP)[0]
         el_r_name_part_2.text = recipient_name_part_2.upper()
         
-        el_r_blood_type = tree.xpath(self.el_selectors['recipient_blood_type'], namespaces=NSMAP)[0]
-        el_r_blood_type.text = self.data['recipient_blood_type'].upper()
+        el_r_blood_type = tree.xpath(self.el_selectors['recipient_bloodtype'], namespaces=NSMAP)[0]
+        el_r_blood_type.text = self.data['recipient_bloodtype'].upper()
         
 
         el_l_name = tree.xpath(self.el_selectors['location_name'], namespaces=NSMAP)[0]
