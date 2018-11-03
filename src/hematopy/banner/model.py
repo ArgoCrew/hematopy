@@ -75,7 +75,7 @@ class BannerBloodDonation(object):
             recipient_name_part_1 = ' '.join(recipient_name_parts[:3])
             recipient_name_part_2 = ' '.join(recipient_name_parts[3:])
         else:
-            recipient_name_part_1, recipient_name_part_2 = name, ''
+            recipient_name_part_1, recipient_name_part_2 = ' '.join(recipient_name_parts), ''
         
         el_r_name_part_1 = tree.xpath(self.el_selectors['recipient_name_part_1'], namespaces=NSMAP)[0]
         el_r_name_part_1.text = recipient_name_part_1.upper()
@@ -83,7 +83,7 @@ class BannerBloodDonation(object):
         el_r_name_part_2 = tree.xpath(self.el_selectors['recipient_name_part_2'], namespaces=NSMAP)[0]
         el_r_name_part_2.text = recipient_name_part_2.upper()
         
-        el_r_blood_type = tree.xpath(self.el_selectors['recipient_image'], namespaces=NSMAP)[0]
+        el_r_blood_type = tree.xpath(self.el_selectors['recipient_blood_type'], namespaces=NSMAP)[0]
         el_r_blood_type.text = self.data['recipient_blood_type'].upper()
         
 
