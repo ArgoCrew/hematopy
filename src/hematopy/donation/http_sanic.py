@@ -49,7 +49,7 @@ async def donation_create_v1(request):
     
     file_dst = os.environ.get('HEMATOPY__CORE__IMG_DST', server.img_dir)
     file_name = 'banner-blood-donation-{}.png'.format(secrets.token_urlsafe(10))
-    file_uri = ''.join((file_dir, file_name))
+    file_uri = ''.join((file_dst, file_name))
     donate_action = _parse_request_donate_action(request)
 
     banner = BannerBloodDonation(donate_action=donate_action)
