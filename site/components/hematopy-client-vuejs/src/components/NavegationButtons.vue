@@ -17,10 +17,7 @@
 <script>
 export default {
   name: 'NavegationButtons',
-  props: ['step', 'file'],
-  mounted() {
-    console.log(this.file)
-  }
+  props: ['step', 'file']
 }
 </script>
 <style lang="scss" scoped>

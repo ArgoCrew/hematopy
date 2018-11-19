@@ -7,7 +7,7 @@ require('./assets/sass/main.scss')
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyDnOXTF1Mzm7OJWbWlP4AdhNvEfLCiX6-w',
+    key: process.env.VUE_APP_GOOGLE_PLACE_KEY,
     libraries: 'places'
   }
 })
