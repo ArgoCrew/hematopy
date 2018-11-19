@@ -1,10 +1,10 @@
 <template>
   <div>
     <input ref="autocomplete" 
-    placeholder="Informe o endereço do hospital" 
-    class="search-location"
-    onfocus="value = ''" 
-    type="text" />
+      placeholder="Informe o endereço do hospital" 
+      class="search-location"
+      onfocus="value = ''" 
+      type="text" />
   </div>
 </template>
 <script>
@@ -20,12 +20,9 @@ export default {
   },
   methods: {
     setGoogleApiPlace () {
-      return new Promise(resolve => {
-        let recaptchaScript = document.createElement('script')
-        recaptchaScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDnOXTF1Mzm7OJWbWlP4AdhNvEfLCiX6-w&libraries=places')
-        document.head.appendChild(recaptchaScript)
-        resolve(true)
-      });
+      let recaptchaScript = document.createElement('script')
+      recaptchaScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDAZrFDl5zoAF-2wJMuMutxttcmDXMrddY&libraries=places')
+      document.head.appendChild(recaptchaScript)
     },
     setConfigGoogleApi () {
       this.autocomplete = new google.maps.places.Autocomplete(
