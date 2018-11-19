@@ -23,7 +23,7 @@ def cli_donation_create():
 @click.option('-rn', '--recipient-name',
               prompt='Name of Patient',
               help='The name of person who needs donation',)
-@click.option('-rbt', '--recipient-blood-type',
+@click.option('-rbt', '--recipient-bloodtype',
               prompt='Blood Type of Patient',
               type=click.Choice(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']),)
 @click.option('-ln', '--location-name', 
@@ -53,7 +53,7 @@ def cli_donation_create():
                       ./bannername.png''',
               default='./hematopy-banner-blood-donation-{uid}.png')
 def cli_donation_create(
-    recipient_image, recipient_name, recipient_blood_type, 
+    recipient_image, recipient_name, recipient_bloodtype, 
     location_name, location_address_street, location_address_number, 
     location_address_district, location_address_locality,
     location_address_region, location_address_postal_code,
