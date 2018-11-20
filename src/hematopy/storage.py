@@ -1,4 +1,3 @@
-from google.auth.transport.requests import AuthorizedSession
 from google.resumable_media import requests, common
 from google.cloud import storage as storage_gc
 
@@ -12,6 +11,8 @@ class GCSObjectStreamUpload(object):
             blob_name: str,
             chunk_size: int=256 * 1024
         ):
+        from google.auth.transport.requests import AuthorizedSession
+        
         self._client = client
         self._bucket = self._client.bucket(bucket_name)
         self._blob = self._bucket.blob(blob_name)

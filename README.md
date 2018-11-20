@@ -132,5 +132,13 @@ curl --request POST \
 ### Testing
 
 ```
-$ python setup.py test
+$ python -m unittest
 ```
+
+### Services
+
+- https://travis-ci.org/ArgoCrew/hematopy
+
+### References
+
+- https://github.com/kvas-it/pytest-console-scripts
