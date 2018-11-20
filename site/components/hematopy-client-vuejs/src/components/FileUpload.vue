@@ -95,34 +95,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.file-upload {
-  > .columns {
-    > .column {
-    }
-  }
-  .columns {
-    .column {
-      > .title {
-      }
-      .icon {
-        // padding: 0.1em 0;
-        font-size: 3em;
-        > label {
-          > i {
-            cursor: pointer;
-          }
-        }
-      }
-    }
-  }
-
-  > .close-btn {
-    margin: 15px 0;
-  }
-}
-.has-image-centered {
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
