@@ -134,3 +134,10 @@ curl --request POST \
 ```
 $ python setup.py test
 ```
+
+## Contributors
+
+Thanks goes to these wonderful people:
+
+| [<img src="https://avatars1.githubusercontent.com/u/6784777?s=460&v=4" width="100px;"/><br /><sub><b>Mikael Hadler</b></sub>](https://github.com/argocrew/hematopy/commits?author=mikaelhadler)<br /> | [<img src="https://avatars0.githubusercontent.com/u/516827?s=460&v=4" width="100px;"/><br /><sub><b>Gustavo RPS</b></sub>](https://github.com/argocrew/hematopy/commits?author=mikaelhadler)<br /> |
+| :---: | :---: |
