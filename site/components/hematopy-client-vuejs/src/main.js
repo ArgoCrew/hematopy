@@ -3,7 +3,7 @@ import App from './App.vue'
 import './assets/fonts/font-awesome/css/font-awesome.min.css'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
-require('./assets/sass/main.scss')
+require('./assets/sass/styles.scss')
 
 Vue.use(VueGoogleMaps, {
   load: {

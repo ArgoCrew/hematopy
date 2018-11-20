@@ -20,13 +20,4 @@ export default {
   props: ['step', 'file']
 }
 </script>
-<style lang="scss" scoped>
-  .navegation-buttons {
-    > .button {
-      margin: 10px;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-  }
-</style>
 
