@@ -16,7 +16,6 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     package_dir={'': 'src'},
     packages=setuptools.find_packages(where='src'),
-    setup_requires=['pytest-runner'],
     install_requires=[
         'CairoSVG==2.1.3',
         'click==6.7',
@@ -24,9 +23,6 @@ setuptools.setup(
         'lxml==4.2.1',
         'python-magic==0.4.15',
         'google-cloud-storage==1.10.0'
-    ],
-    tests_require = [
-        'pytest-console-scripts==0.1.5',
     ],
     # package_dir={'':'hematopy'},
     entry_points = {
