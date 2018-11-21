@@ -1,0 +1,16 @@
+{
+  "name": "@argocrew/hemato-polymer",
+  "version": "0.0.1",
+  "description": "Hemato client for polymer and Web Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polymer/lit-element": "^0.5.2",
+    "@vaadin/vaadin-upload": "github:vaadin/vaadin-upload",
+    "@webcomponents/webcomponentsjs": "^2.0.4"
+  }
+}

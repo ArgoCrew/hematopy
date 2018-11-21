@@ -66,29 +66,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-.container {
-  & .input {
-    text-align: center;
-    text-transform: uppercase;
-  }
-  max-width: 450px;
-  ::-webkit-input-placeholder {
-    text-align: center;
-  }
-
-  :-moz-placeholder { /* Firefox 18- */
-    text-align: center;
-  }
-
-  ::-moz-placeholder {  /* Firefox 19+ */
-    text-align: center;
-  }
-
-  :-ms-input-placeholder {
-    text-align: center;
-  }
-}
-</style>
