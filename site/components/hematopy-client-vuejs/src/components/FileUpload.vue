@@ -81,7 +81,6 @@ export default {
       this.file.name = ''
     },
     setFile (file) {
-      console.log(file)
       this.file.name = file.name
       this.file.base64 = file.base64
       
