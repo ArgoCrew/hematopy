@@ -3,9 +3,6 @@
 </template>
 <script>
 export default {
-  name: 'Maps',
-  mounted () {
-    console.log('here')
-  }
+  name: 'Maps'
 }
 </script>

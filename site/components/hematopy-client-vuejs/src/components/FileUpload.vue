@@ -1,4 +1,4 @@
-<template>  
+<template>
   <div class="file-upload">
     <div class="columns">
       <div class="column">
@@ -27,7 +27,7 @@
         <div class="preview">
           <div class="image">
             <figure class="image is-128x128 has-image-centered">
-              <img :src="file.urlBase64" class=" is-rounded" alt="Imagem do paciente"
+              <img :src="file.base64" class=" is-rounded" alt="Imagem do paciente"
                 v-show="fileExists">
             </figure>
             <span>
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-  </div>    
+  </div>
 </template>
 <script>
 export default {
@@ -55,8 +55,8 @@ export default {
   methods: {
     onFileChange: function (e) {
       const file = e.target.files[0]
+      this.setFile(file)      
       this.previewFile()
-      this.setFileName(file.name)
     },
     previewFile () {
       let reader = new FileReader()
@@ -66,13 +66,13 @@ export default {
       reader.addEventListener(
         'load',
         () => {
-          let base64 = reader.result
-          this.setBase64(base64)
+          file.base64 = reader.result
+          this.setFile(file)
         },
         false
       )
       if (file) {
-        reader.readAsDataURL(file)        
+        reader.readAsDataURL(file)
       }
     },
     cancelViewFile (e) {
@@ -80,12 +80,12 @@ export default {
       file.value = ''
       this.file.name = ''
     },
-    setBase64 (_urlBase64) {
-      this.file.urlBase64 = _urlBase64
-    },
-    setFileName (name) {
-      this.file.name = name
-      this.$emit('setfilename', name)
+    setFile (file) {
+      console.log(file)
+      this.file.name = file.name
+      this.file.base64 = file.base64
+      
+      this.$emit('setfile', file)
     }
   },
   computed: {
