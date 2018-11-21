@@ -105,7 +105,6 @@ export default {
       > .title {
       }
       .icon {
-        // padding: 0.1em 0;
         font-size: 3em;
         > label {
           > i {
