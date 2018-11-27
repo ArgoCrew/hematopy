@@ -1,0 +1,34 @@
+{
+  "name": "hematopy",
+  "version": "1.0.0",
+  "description": "Solutions for blood donations using Python",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "dependencies": {
+    "all-contributors-cli": "^5.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mikaelhadler@github.com/ArgoCrew/hematopy.git"
+  },
+  "keywords": [
+    "health",
+    "donation",
+    "blood"
+  ],
+  "author": "ArgoCrew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArgoCrew/hematopy/issues"
+  },
+  "homepage": "https://github.com/ArgoCrew/hematopy#readme"
+}
