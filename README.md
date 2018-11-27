@@ -135,6 +135,7 @@ curl --request POST \
 $ python -m unittest
 ```
 
+<<<<<<< HEAD
 ### Services
 
 - https://travis-ci.org/ArgoCrew/hematopy
@@ -149,3 +150,16 @@ Thanks goes to these wonderful people:
 
 | [<img src="https://avatars1.githubusercontent.com/u/6784777?s=460&v=4" width="100px;"/><br /><sub><b>Mikael Hadler</b></sub>](https://github.com/argocrew/hematopy/commits?author=mikaelhadler)<br /> | [<img src="https://avatars0.githubusercontent.com/u/516827?s=460&v=4" width="100px;"/><br /><sub><b>Gustavo RPS</b></sub>](https://github.com/argocrew/hematopy/commits?author=mikaelhadler)<br /> |
 | :---: | :---: |
+=======
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars1.githubusercontent.com/u/6784777?v=4" width="100px;"/><br /><sub><b>Mikael Hadler</b></sub>](http://mikaelhadler.com.br)<br />[💻](https://github.com/ArgoCrew/Hematopy/commits?author=mikaelhadler "Code") [📖](https://github.com/ArgoCrew/Hematopy/commits?author=mikaelhadler "Documentation") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+>>>>>>> develop
