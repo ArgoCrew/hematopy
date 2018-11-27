@@ -135,7 +135,7 @@ curl --request POST \
 $ python -m unittest
 ```
 
-<<<<<<< HEAD
+
 ### Services
 
 - https://travis-ci.org/ArgoCrew/hematopy
@@ -144,13 +144,6 @@ $ python -m unittest
 
 - https://github.com/kvas-it/pytest-console-scripts
 
-## Contributors
-
-Thanks goes to these wonderful people:
-
-| [<img src="https://avatars1.githubusercontent.com/u/6784777?s=460&v=4" width="100px;"/><br /><sub><b>Mikael Hadler</b></sub>](https://github.com/argocrew/hematopy/commits?author=mikaelhadler)<br /> | [<img src="https://avatars0.githubusercontent.com/u/516827?s=460&v=4" width="100px;"/><br /><sub><b>Gustavo RPS</b></sub>](https://github.com/argocrew/hematopy/commits?author=mikaelhadler)<br /> |
-| :---: | :---: |
-=======
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
@@ -162,4 +155,3 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
->>>>>>> develop
