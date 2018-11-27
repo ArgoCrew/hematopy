@@ -1,0 +1,23 @@
+{
+  "projectName": "Hematopy",
+  "projectOwner": "ArgoCrew",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "mikaelhadler",
+      "name": "Mikael Hadler",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6784777?v=4",
+      "profile": "http://mikaelhadler.com.br",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ]
+}
