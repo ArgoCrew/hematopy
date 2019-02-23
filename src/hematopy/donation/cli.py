@@ -52,7 +52,7 @@ def cli_donation_create():
                       gs://bucket-name/banner-name.png
                       ./bannername.png''',
               default='./hematopy-banner-blood-donation-{uid}.png')
-def cli_donation_create(
+def create(
     recipient_image, recipient_name, recipient_bloodtype, 
     location_name, location_address_street, location_address_number, 
     location_address_district, location_address_locality,

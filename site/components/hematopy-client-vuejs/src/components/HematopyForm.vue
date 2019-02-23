@@ -5,7 +5,7 @@
         <input class="input" type="text" id="recipient-name" name="recipient-name" placeholder="Informe o nome do paciente"
           v-on:keyup.enter="formValidate"
           v-model="recipient.recipientName">
-      </div>    
+      </div>
     </div>
     <div class="columns">
       <div class="column">
@@ -39,7 +39,7 @@ import Errors from '@/components/Errors.vue'
 
 export default {
   name: 'HematopyForm',
-  props: ['step','recipient'],
+  props: ['step', 'recipient'],
   data () {
     return {
       recipientName: '',
@@ -50,9 +50,9 @@ export default {
   methods: {
     formValidate () {
       const model = { ...this.recipient }
-      if(model.recipientName.length <= 0){ this.setError('Nome do paciente é obrigatório') }
-      if(model.recipientTypeBlood.length <= 0) { this.setError('Tipo de sangue do paciente é obrigatório') }
-      if(this.errors.length === 0) { this.setRecipient() }
+      if (model.recipientName.length <= 0) { this.setError('Nome do paciente é obrigatório') }
+      if (model.recipientTypeBlood.length <= 0) { this.setError('Tipo de sangue do paciente é obrigatório') }
+      if (this.errors.length === 0) { this.setRecipient() }
     },
     setRecipient () {
       this.$emit('nextstep')
