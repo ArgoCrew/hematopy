@@ -9,8 +9,11 @@ hematopy
 - Upload generated banners to [Google Cloud Storage]()
 - RestFul API
 
+## Development
 
-## Instalation
+### Requiriments
+
+- [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html): Package, dependency and environment management
 
 ### Git
 
