@@ -8,8 +8,8 @@
               <FileUpload
                 @nextstep="nextStep"
                 @previousstep="previousStep"
-                @setfilename="setFileName"
-                :file="file"
+                @setfile="setFile"
+                :file="recipient.file"
                 v-if="step === 0">
               </FileUpload>
             </div>
@@ -32,13 +32,21 @@
               </Maps>
             </div>
           </div>
+          <div class="columns">
+            <div class="column">
+              <HematopyPrint
+                :recipient='recipient'
+                v-if="step === 3"></HematopyPrint>
+            </div>
+          </div>
            <div class="columns">
             <div class="column">
               <NavegationButtons
                 @nextstep="nextStep"
                 @previousstep="previousStep"
-                :file="file"
-                :step="step">
+                :file="recipient.file"
+                :step="step"
+                v-if="step !== 3">
               </NavegationButtons>
             </div>
           </div>
@@ -51,18 +59,19 @@
 import FileUpload from './components/FileUpload.vue'
 import HematopyForm from './components/HematopyForm.vue'
 import Maps from './components/Maps.vue'
-import NavegationButtons from './components/NavegationButtons.vue';
+import NavegationButtons from './components/NavegationButtons.vue'
+import HematopyPrint from './components/HematopyPrint'
 
 export default {
   name: 'app',
   data () {
     return {
       step: 0,
-      file: {
-        name: '',
-        urlBase64: ''
-      },
       recipient: {
+        file: {
+          name: '',
+          base64: ''
+        },
         recipientName: '',
         recipientTypeBlood: ''
       }
@@ -70,20 +79,22 @@ export default {
   },
   methods: {
     nextStep () {
-      if(this.step <= 2) { this.step++ }
+      if (this.step <= 2) { this.step++ }
     },
     previousStep () {
-      if(this.step > 0 && this.step <= 2) { this.step-- }
+      if (this.step > 0 && this.step <= 2) { this.step-- }
     },
-    setFileName (params) {
-      this.file.name = params
+    setFile (params) {
+      this.recipient.file.name = params.name
+      this.recipient.file.base64 = params.base64 
     }
   },
   components: {
     FileUpload,
     HematopyForm,
     Maps,
-    NavegationButtons
+    NavegationButtons,
+    HematopyPrint
   }
 }
 </script>
