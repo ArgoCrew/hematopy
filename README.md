@@ -109,6 +109,7 @@ curl --request POST \
      --form 'location_address_postal_code=29047-100'
 ```
 
+
 ## Development
 
 ### Setup
@@ -130,8 +131,6 @@ curl --request POST \
     $ export HEMATOPY__CORE__IMG_DST_GCS=gs://YOUR_BUCKET/IMAGES/DESTINATION/DIRECTORY
     ```
 
-
-
 ### Testing
 
 ```
@@ -147,14 +146,15 @@ $ python -m unittest
 
 - https://github.com/kvas-it/pytest-console-scripts
 
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars1.githubusercontent.com/u/6784777?v=4" width="100px;"/><br /><sub><b>Mikael Hadler</b></sub>](http://mikaelhadler.com.br)<br />[💻](https://github.com/ArgoCrew/Hematopy/commits?author=mikaelhadler "Code") [📖](https://github.com/ArgoCrew/Hematopy/commits?author=mikaelhadler "Documentation") |
-| :---: |
+<table><tr><td align="center"><a href="http://mikaelhadler.com.br"><img src="https://avatars1.githubusercontent.com/u/6784777?v=4" width="100px;" alt="Mikael Hadler"/><br /><sub><b>Mikael Hadler</b></sub></a><br /><a href="https://github.com/ArgoCrew/Hematopy/commits?author=mikaelhadler" title="Code">💻</a> <a href="https://github.com/ArgoCrew/Hematopy/commits?author=mikaelhadler" title="Documentation">📖</a></td><td align="center"><a href="https://gustavorps.net"><img src="https://avatars3.githubusercontent.com/u/516827?v=4" width="100px;" alt="Gustavo RPS"/><br /><sub><b>Gustavo RPS</b></sub></a><br /><a href="https://github.com/ArgoCrew/Hematopy/commits?author=GustavoRPS" title="Code">💻</a> <a href="#design-GustavoRPS" title="Design">🎨</a> <a href="https://github.com/ArgoCrew/Hematopy/commits?author=GustavoRPS" title="Documentation">📖</a> <a href="#eventOrganizing-GustavoRPS" title="Event Organizing">📋</a> <a href="#infra-GustavoRPS" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#projectManagement-GustavoRPS" title="Project Management">📆</a></td></tr></table>
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
