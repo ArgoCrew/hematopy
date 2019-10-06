@@ -1,9 +1,10 @@
 import click
 
-from .donation.cli import cli_donation
+# from .donation.cli import cli_donation
 from .http.server import cli_server
 
-main = click.CommandCollection(sources=[cli_donation, cli_server])
+# main = click.CommandCollection(sources=[cli_donation, cli_server])
+main = click.CommandCollection(sources=[cli_server])
 
 
 
