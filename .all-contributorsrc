@@ -18,6 +18,20 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "GustavoRPS",
+      "name": "Gustavo RPS",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/516827?v=4",
+      "profile": "https://gustavorps.net",
+      "contributions": [
+        "code",
+        "design",
+        "doc",
+        "eventOrganizing",
+        "infra",
+        "projectManagement"
+      ]
     }
   ]
 }

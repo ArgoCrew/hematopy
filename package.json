@@ -9,7 +9,7 @@
     "test": "tests"
   },
   "dependencies": {
-    "all-contributors-cli": "^5.4.1"
+    "all-contributors-cli": "^6.3.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://mikaelhadler@github.com/ArgoCrew/hematopy.git"
+    "url": "git@github.com:ArgoCrew/hematopy.git"
   },
   "keywords": [
     "health",
