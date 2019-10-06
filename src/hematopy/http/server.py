@@ -4,7 +4,8 @@ import click
 from sanic import Sanic
 
 from ..log import logger
-from ..donation.http_sanic import sanic_donation_bp_v1
+# from ..donation.http_sanic import sanic_donation_bp_v1
+from ..notification.http_sanic import sanic_notification_bp_v1
 
 
 file_dir = os.path.dirname(__file__)
@@ -16,7 +17,8 @@ if not os.path.exists(img_dir):
 
 app = Sanic(__name__)
 app.static('/images', img_dir)
-app.blueprint(sanic_donation_bp_v1)
+# app.blueprint(sanic_donation_bp_v1)
+app.blueprint(sanic_notification_bp_v1)
 
 
 @click.group()
