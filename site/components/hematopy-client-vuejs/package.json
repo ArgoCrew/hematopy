@@ -10,7 +10,7 @@
     "mock:rest": "json-server db.json -p 3001"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "bulma": "^0.7.1",
     "vue": "^2.5.17",
     "vue-form-generator": "^2.3.1",
