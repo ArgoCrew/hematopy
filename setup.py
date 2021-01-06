@@ -17,7 +17,7 @@ setuptools.setup(
     package_dir={'': 'src'},
     packages=setuptools.find_packages(where='src'),
     install_requires=[
-        'CairoSVG==2.1.3',
+        'CairoSVG==2.5.1',
         'click==6.7',
         'sanic==0.8.3',
         'lxml==4.2.1',
