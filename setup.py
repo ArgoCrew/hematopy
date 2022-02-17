@@ -19,7 +19,7 @@ setuptools.setup(
     install_requires=[
         'CairoSVG==2.1.3',
         'click==6.7',
-        'sanic==0.8.3',
+        'sanic==20.12.6',
         'lxml==4.2.1',
         'python-magic==0.4.15',
         'google-cloud-storage==1.10.0'
